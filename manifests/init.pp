@@ -43,6 +43,7 @@ class geminabox (
   $manage_group = true,
   $manage_data_dir = true,
   $manage_config_dir = true,
+  $api_key = undef
 ) {
 
   # manage users and groups
@@ -72,7 +73,7 @@ class geminabox (
       require => User[$user],
     }
   }
-  
+
   if $manage_data_dir {
     file { $data_dir:
       ensure => 'directory',

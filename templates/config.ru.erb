@@ -2,5 +2,23 @@ require "rubygems"
 require "geminabox"
 
 Geminabox.data = "<%= @data_dir %>"
-run Geminabox
+
+<% if @api_key then %>
+  <% if @api_key.class.to_s == 'String' %>
+Geminabox::Server.before '/api/v1/gems' do
+  unless env['HTTP_AUTHORIZATION'] == 'API_KEY'
+    halt 401, "Access Denied. Api_key invalid or missing.\n"
+  end
+end
+  <% else %>
+Geminabox::Server.before '/api/v1/gems' do
+  api_keys = <%= @api_key %>
+  unless api_keys.include?(env['HTTP_AUTHORIZATION'])
+    halt 401, "Access Denied. Api_key invalid or missing.\n"
+  end
+end
+  <% end %>
+<% end %>
+
+run Geminabox::Server
 
