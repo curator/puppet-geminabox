@@ -1,10 +1,2 @@
-FORGE
-  remote: http://forge.puppetlabs.com
-  specs:
-    maestrodev/rvm (1.5.1)
-      puppetlabs/stdlib (>= 3.2.0)
-    puppetlabs/stdlib (4.1.0)
-
 DEPENDENCIES
-  maestrodev/rvm (>= 0)
 
