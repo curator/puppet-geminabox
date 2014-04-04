@@ -28,22 +28,22 @@
 # other modules you include.
 #
 class geminabox (
-  $config_dir   = "/etc/geminabox",
-  $data_dir     = "/var/lib/geminabox",
-  $log_file     = "/var/log/geminabox.log",
-  $pid_file     = "/var/run/geminabox.pid",
-  $service_name = "geminabox",
-  $user         = "geminabox",
-  $group        = "geminabox",
-  $version      = "present",
-  $port         = 8080,
-  $thin_options = "-d",
-  $ruby_version = "1.9",
-  $manage_user  = true,
-  $manage_group = true,
-  $manage_data_dir = true,
+  $config_dir        = "/etc/geminabox",
+  $data_dir          = "/var/lib/geminabox",
+  $log_file          = "/var/log/geminabox.log",
+  $pid_file          = "/var/run/geminabox.pid",
+  $service_name      = "geminabox",
+  $user              = "geminabox",
+  $group             = "geminabox",
+  $version           = "present",
+  $port              = 8080,
+  $thin_options      = "-d",
+  $ruby_version      = "1.9",
+  $manage_user       = true,
+  $manage_group      = true,
+  $manage_data_dir   = true,
   $manage_config_dir = true,
-  $api_key = undef
+  $api_key           = undef
 ) {
 
   # manage users and groups
